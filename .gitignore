@@ -12,8 +12,6 @@ dist/
 frontend/next-env.d.ts
 
 # Env / secrets
-.env
-.env.local
 .env.*.local
 *.pem
 *.json.key
@@ -21,7 +19,6 @@ frontend/next-env.d.ts
 # OS / IDE
 .DS_Store
 .idea/
-.vscode/
 *.swp
 
 # Logs
@@ -34,3 +31,4 @@ services/indexer/data/
 services/indexer/node_modules/
 packages/domain/node_modules/
 packages/domain/dist/
+config.bat
