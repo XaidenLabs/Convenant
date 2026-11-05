@@ -1,0 +1,22 @@
+{
+  "name": "covenant",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Bonded solver marketplace for NEAR Intents — scalable read path + on-chain enforcement",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "frontend:install": "npm --prefix frontend install",
+    "indexer:install": "npm --prefix services/indexer install",
+    "indexer:seed": "npm --prefix services/indexer run seed",
+    "indexer:dev": "npm --prefix services/indexer run dev",
+    "indexer:start": "npm --prefix services/indexer run start",
+    "solver:install": "npm --prefix solver install",
+    "solver:dry": "npm --prefix solver run dry",
+    "solver:watch": "npm --prefix solver run watch",
+    "typecheck:solver": "npm --prefix solver run typecheck",
+    "typecheck:indexer": "npm --prefix services/indexer run typecheck",
+    "stack": "npm run indexer:seed && npm run indexer:dev"
+  }
+}

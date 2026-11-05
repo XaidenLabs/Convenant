@@ -1,0 +1,36 @@
+# Rust
+**/target/
+# Keep committed wasm artifact under /res for deploy; ignore build outputs elsewhere
+contracts/**/*.wasm
+
+# Node / Next
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+frontend/next-env.d.ts
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.json.key
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+secrets/
+
+# Indexer local store
+services/indexer/data/
+services/indexer/node_modules/
+packages/domain/node_modules/
+packages/domain/dist/

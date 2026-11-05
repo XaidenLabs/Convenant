@@ -1,0 +1,35 @@
+services:
+  indexer:
+    image: node:22-bookworm
+    working_dir: /app
+    volumes:
+      - ./services/indexer:/app
+      - indexer_data:/app/data
+    command: bash -lc "npm install && npm run seed && npm start"
+    # seed clears local cache; start syncs LIVE chain views only (no dummy rows)
+    environment:
+      PORT: "8787"
+      NETWORK: testnet
+      CONTRACT_ID: covenant-solver-mw2mng1b.testnet
+      INDEXER_DATA: /app/data/intents.json
+      INDEXER_POLL_MS: "20000"
+    ports:
+      - "8787:8787"
+
+  frontend:
+    image: node:22-bookworm
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    command: bash -lc "npm install && npm run dev -- --hostname 0.0.0.0 --port 3000"
+    environment:
+      NEXT_PUBLIC_INDEXER_URL: http://localhost:8787
+      NEXT_PUBLIC_NETWORK: testnet
+      NEXT_PUBLIC_CONTRACT_ID: covenant-solver-mw2mng1b.testnet
+    ports:
+      - "3000:3000"
+    depends_on:
+      - indexer
+
+volumes:
+  indexer_data:

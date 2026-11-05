@@ -1,0 +1,17 @@
+[package]
+name = "covenant"
+version = "0.1.0"
+edition = "2021"
+authors = ["Covenant <covenant@near>"]
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+near-sdk = { version = "5.5", features = ["legacy"] }
+borsh = "1.5"
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+near-sdk = { version = "5.5", features = ["legacy", "unit-testing"] }

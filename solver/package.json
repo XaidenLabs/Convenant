@@ -1,0 +1,28 @@
+{
+  "name": "covenant-solver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "solve": "tsx solver.ts",
+    "quote": "tsx solver.ts --quote-only",
+    "dry": "tsx solver.ts --dry-run --mock --intent covenant-demo-1",
+    "derive": "tsx solver.ts --derive-only --mock --intent covenant-demo-1",
+    "watch": "tsx scripts/watch-intents.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@near-js/accounts": "^1.3.0",
+    "@near-js/crypto": "^1.4.0",
+    "@near-js/providers": "^1.0.1",
+    "@near-js/signers": "^0.1.4",
+    "chainsig.js": "^1.1.6",
+    "dotenv": "^16.4.7",
+    "near-api-js": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
